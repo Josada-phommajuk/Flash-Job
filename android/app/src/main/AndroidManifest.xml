@@ -1,7 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flash_job">
 
-    <!-- 🔥 ขอสิทธิ์ที่จำเป็น -->
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -32,19 +31,13 @@
             </intent-filter>
         </activity>
 
-        <!-- 🛑 เพิ่ม Application ID สำหรับ AdMob -->
-        <!-- <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-xxxxxxxxxxxxxxxx~xxxxxxxxxx"/>  -->
-
-        <!-- 🛑 Meta-data สำหรับ Flutter -->
+       
         <meta-data
             android:name="flutterEmbedding"
             android:value="2"/>
 
     </application>
 
-    <!-- 📌 คำสั่งสำหรับการใช้งาน Intent (Process Text) -->
     <queries>
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>
