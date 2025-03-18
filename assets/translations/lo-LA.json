@@ -1,0 +1,168 @@
+{
+    "welcome_to": "ຍິນດີຕ້ອນຮັບສູ່",
+    "app_subtitle": "ບໍລິການຈັດການບັນຫາຄົບວົງຈອນ",
+    "get_started": "ເລີ່ມຕົ້ນນຳໃຊ້",
+    "continue": "ດຳເນີນການຕໍ່",
+    "select_language": "ເລືອກພາສາ",
+  
+    "onboarding_title_1": "ບໍລິການສອນພິເສດ",
+    "onboarding_desc_1": "ຄົ້ນຫາຕິວເຕີໄດ້ງ່າຍ ເລືອກຄູທີ່ກົງກັບຄວາມຕ້ອງການຂອງທ່ານ ທັງແບບຕົວຕໍ່ຕົວ ຫຼື ອອນລາຍ",
+  
+    "onboarding_title_2": "ບໍລິການແມ່ບ້ານ",
+    "onboarding_desc_2": "ບໍ່ຕ້ອງກັງວົນກັບບັນຫາເຮືອນຮົກອີກຕໍ່ໄປ ດ້ວຍແມ່ບ້ານມືອາຊີບທີ່ຜ່ານການຄັດເລືອກ ແລະ ຝຶກອົບຮົມດ້ານຄວາມສະອາດ",
+  
+    "onboarding_title_3": "ບໍລິການຊ່າງສ້ອມແປງ",
+    "onboarding_desc_3": "ຄົ້ນຫາຊ່າງເຕັກນິກໃກ້ທ່ານ - ບໍ່ວ່າຈະເປັນຊ່າງໄຟຟ້າ ຊ່າງປະປາ ຊ່າງແອ ແລະ ອື່ນໆອີກຫຼາກຫຼາຍ",
+  
+    "onboarding_title_4": "ບໍລິການລ້ຽງເດັກ",
+    "onboarding_desc_4": "ທ່ານກຳລັງຊອກຫາພີ່ລ້ຽງເດັກທີ່ເຊື່ອຖືໄດ້ ຫຼື ສະຖານທີ່ຮັບລ້ຽງເດັກທີ່ປອດໄພ? ແອັບຂອງພວກເຮົາຊ່ວຍໃຫ້ທ່ານຄົ້ນຫາ ແລະ ຈອງບໍລິການລ້ຽງເດັກໄດ້ງ່າຍ",
+  
+    "onboarding_title_5": "ບໍລິການເບິ່ງແຍງສັດລ້ຽງ",
+    "onboarding_desc_5": "ບໍ່ມີເວລາເບິ່ງແຍງໝາ ຫຼື ແມວຂອງທ່ານຕະຫຼອດເວລາ? ແອັບຂອງພວກເຮົາຊ່ວຍໃຫ້ທ່ານຄົ້ນຫາຜູ້ເບິ່ງແຍງສັດລ້ຽງມືອາຊີບ",
+    
+    "home_services_clean": "ທຳຄວາມສະອາດ",
+    "home_services_child": "ລ້ຽງເດັກ",
+    "home_services_tutoring": "ຄູສອນພິເສດ",
+    "home_services_repair": "ສ້ອມແປງ",
+    "home_services_pet": "ລ້ຽງສັດ",
+    "home_services_join": "ເຂົ້າຮ່ວມ",
+    "featured_services_clean_house_title": "ທຳຄວາມສະອາດ ເຮືອນ",
+    "featured_services_clean_house_description": "ບໍລິການທຳຄວາມສະອາດທຸກປະເພດ",
+    "featured_services_english_tutoring_title": "ສອນພາສາອັງກິດ",
+    "featured_services_english_tutoring_description": "ຄູສອນທີ່ມີປະສົບການ",
+    "featured_services_electrician_title": "ຊ່າງໄຟຟ້າມືອາຊີບ",
+    "featured_services_electrician_description": "ແກ້ໄຂບັນຫາໄຟຟ້າທຸກຊະນິດ",
+    "service":"ບໍລິການ ຕ່າງໆ",
+    "all":"ທັງຫມົດ",
+
+    "promotion":"ພິເສດ",
+    "appBarTitle": "Clean Service",
+    "pageTitle": "ບໍລິການທຳຄວາມສະອາດ",
+    "defaultValue": "ບໍ່ລະບຸ",
+    "whatsappError": "ບໍ່ສາມາດເປີດ WhatsApp ໄດ້",
+    "greeting": "ສະບາຍດີ",
+    "interested": "ສົນໃຈ",
+    "name": "ຊື່",
+    "phone": "ເບີໂທ",
+    "address": "ທີ່ຢູ່",
+    "houseCleaningTitle": "ອະນາໄມບ້ານ",
+    "houseCleaningType": "ອານາໄມບ້ານ",
+    "gardenCleaningTitle": "ອະນາໄມສວນ",
+    "gardenCleaningType": "ອານາໄມສວນ",
+    "laundryTitle": "ຊັກລີດ",
+    "laundryType": "ຊັກລີດ",
+    "airConditionerTitle": "ລ້າງແອ",
+    "airConditionerType": "ລ້າງແອ",
+
+
+    "profile":"ໂປຮຟາຍ",
+    "name_profile":"ຊື່",
+    "frist_name":"ນາມສະກຸນ",
+    "name_error":"ກະລຸນາປ້ອນຊື່ກ່ອນ",
+    "frist_error":"ກະລຸນາປ້ອນນາມສະກຸນກ່ອນ",
+    "save":"ບັນທຶກ",
+    "phoneNumberPageTitle": "ເບີໂທລະສັບ",
+    "pleaseEnterYourPhoneNumber": "ກະລຸນາປ້ອນເບີໂທລະສັບຂອງທ່ານ",
+    "phoneNumberWillBeStoredPrivately": "ເບີທີ່ທ່ານໃສ່ຈະເກັບເປັນຂໍ້ມູນສ່ວນຕົວ ເວລາເຮັດທຸລະກຳຕ່າງໆ ສະນັ້ນກວດສອບໃຫ້ລະອຽດ",
+    "phoneNumberHint": "20 xx xxx xxx",
+    "pleaseEnterPhoneNumber": "ກະລຸນາປ້ອນເບີໂທລະສັບ",
+    "invalidPhoneNumber": "ເບີທີ່ປ້ອນບໍ່ຖີກຕ້ອງ",
+    "verifyYourPhoneNumber": "ກວດສອບໃຫ້ລະອຽດວ່າເບີຂອງທ່ານຖືກຕ້ອງຫລືບໍ່",
+    "confirm": "ຢືນຍັນ",
+    "addressInputPageTitle": "ທີ່ຢູ່",
+    "villageLabel": "ບ້ານ",
+    "villageHint": "ກະລຸນາປ້ອນຊື່ບ້ານ",
+    "districtLabel": "ເມືອງ",
+    "districtHint": "ກະລຸນາປ້ອນຊື່ເມືອງ",
+    "provinceLabel": "ແຂວງ",
+    "provinceHint": "ກະລຸນາປ້ອນຊື່ແຂວງ",
+    "saveButton": "ບັນທຶກ",
+    "villageRequired": "ກະລຸນາປ້ອນຊື່ບ້ານ",
+    "districtRequired": "ກະລຸນາປ້ອນຊື່ເມືອງ",
+    "provinceRequired": "ກະລຸນາປ້ອນຊື່ແຂວງ",
+
+
+    "appBarTitlech": "ບໍລິການລ້ຽງເດັກ",
+    "pageTitlech": "ບໍລິການລ້ຽງເດັກ",
+    "serviceTitle": "ລ້ຽງເດັກ",
+    "serviceType": "ລ້ຽງເດັກ",
+
+    "electrician": "ຊ່າງແລ່ນໄຟ",
+    "aircon": "ຊ່າງແອ",
+    "mechanic": "ຊ່າງແປງລົດ",
+    "construction": "ຊ່າງກໍ່ສ້າງ",
+    "welder": "ຊ່າງຈອດເຫຼັກ",
+    "carpenter": "ຊ່າງໄມ້",
+
+
+    "pet":"ລ້ຽງສັດ",
+
+  
+    "app_title_teach": "TEACHER",
+    "main_title_teach": "ບໍລິຄູສອນພິເສດ",
+    "language_teacher": "ຄູສອນພາສາ",
+    "kindergarten_teacher": "ຄູສອນອະນຸບານ",
+    "university_prep": "ສອນກຽມເຂົ້າມະຫາວິທະຍາໄລ",
+    "it_teacher": "ສອນກ່ຽວກັບທາງດ້ານໄອທີ",
+    "repair_services": "ບໍລິການສ້ອມແປງຕ່າງໆ",
+    "navigate_to_service":"ຕ້ອງການບໍລິການ",
+    "cancel": "ຍົກເລີກ",
+
+    "service_confirmation":"ຍຶນດີໃຫ້ບໍລິການ",
+    "navigation_confirmation_title": "ໄປທີ່ບໍລິການນີ້",
+    "navigation_confirmation_message": "ທ່ານຕ້ອງການເບິ່ງບໍລິການນີ້ບໍ?",
+    "discount": "ລົດລາຄາ {0}",
+    
+    "childServiceDescription": "ບໍລິການດູແລເດັກໂດຍຜູ້ດູແລທີ່ມີປະສົບການ ແລະ ຊຳນານງານ",
+    "aboutOurServiceContent": "ບໍລິການດູແລເດັກຂອງພວກເຮົາເນັ້ນໃສ່ການພັດທະນາທັກສະຂອງເດັກ ແລະ ຄວາມປອດໄພເປັນບູລິມະສິດ. ຜູ້ດູແລທຸກຄົນໄດ້ຮັບການຝຶກອົບຮົມ ແລະ ມີປະສົບການສະເພາະໃນການດູແລເດັກ",
+    "ourServicesTitle": "ພວກເຮົາໃຫ້ບໍລິການຫຍັງແດ່",
+    "ourServicesContent": "• ດູແລເດັກທີ່ບ້ານຂອງທ່ານ\n• ພາເດັກໄປໂຮງຮຽນ ແລະ ຮັບກັບບ້ານ\n• ຊ່ວຍເຮັດວຽກບ້ານ ແລະ ກິດຈະກຳການຮຽນຮູ້\n• ຈັດກິດຈະກຳສ້າງສັນ ແລະ ຫຼິ້ນກັບເດັກ\n• ກຽມອາຫານໃຫ້ເດັກ",
+    "houseCleaningDescription": "ບໍລິການທຳຄວາມສະອາດບ້ານ ແລະ ທີ່ຢູ່ອາໄສ",
+    "gardenCleaningDescription": "ບໍລິການບຳລຸງຮັກສາສວນ ແລະ ພື້ນທີ່ກາງແຈ້ງ",
+    "laundryDescription": "ບໍລິການຊັກລີດເສື້ອຜ້າ ແລະ ຜ້າຫຼາກຫຼາຍຊະນິດ",
+    "airConditionerDescription": "ບໍລິການທຳຄວາມສະອາດ ແລະ ບຳລຸງຮັກສາເຄື່ອງປັບອາກາດ",
+    "language_teacher_desc": "ບໍລິການສອນພາສາຕ່າງປະເທດ ເຊັ່ນ: ອັງກິດ, ຈີນ, ຍີ່ປຸ່ນ, ເກົາຫຼີ ສຳລັບທຸກລະດັບ",
+    "kindergarten_teacher_desc": "ບໍລິການສອນກຽມຄວາມພ້ອມ ແລະ ພັດທະນາການສຳລັບເດັກນ້ອຍໃນໂຮງຮຽນອະນຸບານ",
+    "university_prep_desc": "ບໍລິການກຽມສອບເຂົ້າມະຫາວິທະຍາໄລໃນທຸກວິຊາ",
+    "it_teacher_desc": "ບໍລິການສອນຄອມພິວເຕີ ແລະ ເທັກໂນໂລຊີຂໍ້ມູນຂ່າວສານ",
+    "mathematics_teacher": "ຄູສອນຄະນິດສາດ",
+    "mathematics_teacher_desc": "ບໍລິການສອນຄະນິດສາດພິເສດສຳລັບນັກຮຽນທຸກລະດັບ",
+    "science_teacher": "ຄູສອນວິທະຍາສາດ",
+    "science_teacher_desc": "ບໍລິການສອນພິເສດສຳລັບວິທະຍາສາດ, ຟີຊິກ, ເຄມີ, ຊີວະວິທະຍາ",
+    
+    "repair_service_title": "ບໍລິການສ້ອມແປງ",
+    "electrician_desc": "ບໍລິການຊ່າງໄຟຟ້າສຳລັບການຕິດຕັ້ງ ແລະ ສ້ອມແປງລະບົບໄຟຟ້າ",
+    "aircon_desc": "ບໍລິການສ້ອມແປງ ແລະ ບຳລຸງຮັກສາເຄື່ອງປັບອາກາດທຸກຮຸ່ນ",
+    "mechanic_desc": "ບໍລິການສ້ອມແປງເຄື່ອງຈັກ ແລະ ອຸປະກອນກົນຈັກຕ່າງໆ",
+    "construction_desc": "ບໍລິການກໍ່ສ້າງ ແລະ ສ້ອມແປງເຮືອນ ຫຼື ອາຄານຕ່າງໆ",
+    "welder_desc": "ບໍລິການເຊື່ອມໂລຫະສຳລັບວຽກໂຄງສ້າງ ແລະ ການສ້ອມແປງ",
+    "carpenter_desc": "ບໍລິການຊ່າງໄມ້ສຳລັບເຟີນິເຈີ ແລະ ການຕົກແຕ່ງພາຍໃນ",
+    
+    "pet_care_service": "ບໍລິການດູແລສັດລ້ຽງ",
+    "dog_walking": "ບໍລິການພາໝາຍ່າງ",
+    "dog_walking_desc": "ບໍລິການດູແລ ແລະ ພາໝາຍ່າງຕາມການນັດໝາຍ",
+    "pet_sitting": "ບໍລິການດູແລສັດລ້ຽງທີ່ບ້ານ",
+    "pet_sitting_desc": "ບໍລິການດູແລສັດລ້ຽງທີ່ບ້ານໃນຂະນະທີ່ທ່ານບໍ່ຢູ່",
+    "pet_grooming": "ບໍລິການອາບນ້ຳ ແລະ ແຕ່ງຂົນ",
+    "pet_grooming_desc": "ບໍລິການອາບນ້ຳ ແລະ ແຕ່ງຂົນສັດລ້ຽງ",
+    "pet_boarding": "ບໍລິການຝາກສັດລ້ຽງ",
+    "pet_boarding_desc": "ບໍລິການຝາກສັດລ້ຽງໄລຍະສັ້ນ ແລະ ໄລຍະຍາວ",
+    "Title": "ກ່ຽວກັບບໍລິການຂອງພວກເຮົາ",
+    
+    "title": "ສົນໃຈບໍລິການນີ້",
+    "confirmationQuestion": "ທ່ານສົນໃຈບໍລິການນີ້ຫລືບໍ?",
+    "contactInfo": "ກະລຸນາຕິດຕໍ່ຜ່ານ WhatsApp ເພື່ອຮັບບໍລິການ.",
+    "cancelButton": "ຍົກເລີກ",
+    "contactButton": "ຕິດຕໍ່ດຽວນີ້",
+    "external_link": "ເຂົ້າຮ່ວມກັບພວກເຮົາ",
+    "open_external_link": "ກອກແບບຟອມເພື່ອສະຫມັກ",
+    "edit_profile":"ແກ້ໄຂຂໍ້ມູນສ່ວນຕົວ"
+
+}
+
+
+
+
+    
+      
+  
