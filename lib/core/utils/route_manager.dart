@@ -15,7 +15,7 @@ class RouteManager {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => SplashPage(),
+        builder: (context, state) => HomePage(),
       ),
       GoRoute(
         path: '/getstart',

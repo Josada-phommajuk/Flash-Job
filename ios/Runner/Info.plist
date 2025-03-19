@@ -3,7 +3,20 @@
 <plist version="1.0">
 <dict>
 
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<key>SKAdNetworkItems</key>
+	<array>
+ 	<dict>
+    <key>SKAdNetworkIdentifier</key>
+    <string>cstr6suwn9.skadnetwork</string>
+  	</dict>
+	</array>
 
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>แอพนี้ต้องการเข้าถึงรูปภาพเพื่อให้คุณสามารถเลือกรูปโปรไฟล์ได้</string>
+	<key>NSCameraUsageDescription</key>
+	<string>แอพนี้ต้องการเข้าถึงกล้องเพื่อให้คุณสามารถถ่ายรูปโปรไฟล์ได้</string>
 
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

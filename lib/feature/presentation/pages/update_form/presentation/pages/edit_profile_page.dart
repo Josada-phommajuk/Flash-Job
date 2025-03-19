@@ -8,6 +8,7 @@ import '../../controller/edit_profile_controller.dart';
 import '../widgets/profile_form_fields.dart';
 import '../widgets/profile_image_widget.dart';
 import '../widgets/profile_save_button.dart';
+import 'package:permission_handler/permission_handler.dart'; // เพิ่มบรรทัดนี้
 
 class EditProfilePage extends StatefulWidget {
   @override
@@ -31,14 +32,47 @@ class _EditProfilePageState extends State<EditProfilePage> {
   }
 
   Future<void> _pickImage() async {
-    final pickedFile = await ImagePicker().pickImage(
-      source: ImageSource.gallery,
-      imageQuality: 80,
-    );
-    if (pickedFile != null) {
-      setState(() {
-        _controller.profileImage = File(pickedFile.path);
-      });
+    // ตรวจสอบและขออนุญาตก่อน
+    bool canProceed = true;
+    
+    if (Platform.isAndroid) {
+      PermissionStatus status;
+      
+      // ตรวจสอบเวอร์ชัน Android
+      if (int.parse(Platform.version.split('.').first) >= 13) {
+        // Android 13 หรือสูงกว่า ใช้ READ_MEDIA_IMAGES
+        status = await Permission.photos.request();
+      } else {
+        // Android 12 หรือต่ำกว่า ใช้ READ_EXTERNAL_STORAGE
+        status = await Permission.storage.request();
+      }
+      
+      if (!status.isGranted) {
+        canProceed = false;
+        // แสดงข้อความแจ้งผู้ใช้
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('จำเป็นต้องได้รับอนุญาตเพื่อเลือกรูปภาพ')),
+        );
+      }
+    }
+    
+    if (canProceed) {
+      try {
+        final pickedFile = await ImagePicker().pickImage(
+          source: ImageSource.gallery,
+          imageQuality: 80,
+        );
+        if (pickedFile != null) {
+          setState(() {
+            _controller.profileImage = File(pickedFile.path);
+          });
+        }
+      } catch (e) {
+        print('เกิดข้อผิดพลาดในการเลือกรูปภาพ: $e');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('ไม่สามารถเข้าถึงรูปภาพได้: $e')),
+        );
+      }
     }
   }
 
