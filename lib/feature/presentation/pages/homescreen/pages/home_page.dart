@@ -6,6 +6,7 @@ import 'package:flash_job/feature/presentation/pages/homescreen/services/service
 import 'package:flash_job/feature/presentation/pages/homescreen/widgets/top_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,36 +22,61 @@ class _HomePageState extends State<HomePage> {
   // Interstitial Ad instance
   InterstitialAd? _interstitialAd;
   bool _isAdLoaded = false;
+  
+  // Ad timer constants
+  static const String lastAdShowTimeKey = 'last_ad_show_time';
+  static const int adIntervalInMinutes = 3;
 
   @override
   void initState() {
     super.initState();
-    // Initialize Mobile Ads SDK and show ad immediately
-    _initGoogleMobileAdsAndShowAd();
+    // Initialize Mobile Ads SDK and show ad based on timer
+    _initGoogleMobileAdsAndShowAdIfNeeded();
   }
   
-  Future<void> _initGoogleMobileAdsAndShowAd() async {
-    // Initialize ads with higher priority
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      MobileAds.instance.initialize().then((_) {
-        // Load and show the ad with high priority
+  Future<void> _initGoogleMobileAdsAndShowAdIfNeeded() async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      // Initialize ads
+      await MobileAds.instance.initialize();
+      
+      // Check if we should show an ad based on timer
+      bool shouldShowAd = await _shouldShowAd();
+      if (shouldShowAd) {
         _loadInterstitialAd();
-      });
+      }
     });
   }
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _resetPage();
+  Future<bool> _shouldShowAd() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int? lastShowTime = prefs.getInt(lastAdShowTimeKey);
+    
+    // If first time or no record, show ad
+    if (lastShowTime == null) {
+      return true;
+    }
+    
+    // Calculate time difference in minutes
+    DateTime lastTime = DateTime.fromMillisecondsSinceEpoch(lastShowTime);
+    DateTime now = DateTime.now();
+    int differenceInMinutes = now.difference(lastTime).inMinutes;
+    
+    // Check if enough time has passed
+    return differenceInMinutes >= adIntervalInMinutes;
   }
-
-  // Remove old _initGoogleMobileAds() method as it's replaced by _initGoogleMobileAdsAndShowAd()
+  
+  Future<void> _updateLastAdShowTime() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(lastAdShowTimeKey, DateTime.now().millisecondsSinceEpoch);
+  }
 
   void _loadInterstitialAd() {
     InterstitialAd.load(
       adUnitId: 'ca-app-pub-3940256099942544/1033173712', // Replace with your Ad Unit ID (this is test ID)
-      request: AdRequest(),
+      request: AdRequest(
+        // ไม่ต้องรอข้อมูลส่วนบุคคล ทำให้โหลดเร็วขึ้น
+        nonPersonalizedAds: true,
+      ),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (ad) {
           _interstitialAd = ad;
@@ -63,11 +89,9 @@ class _HomePageState extends State<HomePage> {
           _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
             onAdDismissedFullScreenContent: (ad) {
               ad.dispose();
-              _loadInterstitialAd(); // Reload for next time
             },
             onAdFailedToShowFullScreenContent: (ad, error) {
               ad.dispose();
-              _loadInterstitialAd(); // Try again
             },
           );
         },
@@ -78,11 +102,21 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _showInterstitialAd() {
+  void _showInterstitialAd() async {
     if (_interstitialAd != null && _isAdLoaded) {
+      // Update the timestamp when ad is shown
+      await _updateLastAdShowTime();
+      
+      // Show the ad
       _interstitialAd!.show();
       _isAdLoaded = false;
     }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _resetPage();
   }
 
   void _resetPage() {
