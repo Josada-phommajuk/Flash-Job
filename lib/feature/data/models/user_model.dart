@@ -16,7 +16,7 @@ class UserModel extends HiveObject {
   @HiveField(3)
   String? phoneNumber;
   
-  // เพิ่มฟิลด์สำหรับที่อยู่
+// ສຳລັບທີ່ຢູ່
   @HiveField(4)
   String? address;
   

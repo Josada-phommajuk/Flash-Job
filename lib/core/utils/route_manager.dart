@@ -10,6 +10,9 @@ import '../../feature/presentation/pages/login/feature/address/presentation/page
 import '../../feature/presentation/pages/login/feature/phone_number/presentation/pages/phone_number_page.dart';
 import '../../feature/presentation/pages/update_form/presentation/pages/edit_profile_page.dart';
 
+
+// ລະອຽດປານນີ້ ເດັກນ້ອຍອະນຸບານກະແກ້ໄດ້ > _ <
+
 class RouteManager {
   static final router = GoRouter(
     routes: [

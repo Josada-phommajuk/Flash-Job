@@ -48,7 +48,7 @@ class ConfirmationDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // กำหนดสีตามประเภท (สำหรับสีของปุ่ม)
+    // ກຳນົດສີຕາມປະເພດ
     Color accentColor;
     
     switch (iconType) {
@@ -59,8 +59,8 @@ class ConfirmationDialog extends StatelessWidget {
         accentColor = Color(0xFF4CAF50);
         break;
       case 'info':
-        // เปลี่ยนสีเหลืองที่ไม่สวยงาม
-        accentColor = Color.fromARGB(255, 255, 174, 0); // เปลี่ยนเป็นสีฟ้า
+        
+        accentColor = Color.fromARGB(255, 255, 174, 0);
         break;
       default:
         accentColor = AppColors.primaryGradientStart;
@@ -90,7 +90,7 @@ class ConfirmationDialog extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // ลบแถบสีด้านบนออกและทำส่วนหัวใหม่ที่สวยงามกว่า
+                
                 ClipRRect(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(16),

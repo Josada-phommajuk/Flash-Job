@@ -37,12 +37,18 @@ class LanguageSelectorDialog extends StatelessWidget {
                 color: Colors.orange.shade800,
               ),
             ),
+
+
+            //ຫນ້ານີ້ແມ່ນເວລາກົດຫນ່ວຍໂລກແລ້ວສາມາດເລືອກພາສາໄດ້
             const SizedBox(height: 16),
             _buildLanguageOption(context, 'English', const Locale('en', 'US')),
             _buildLanguageOption(context, 'ไทย', const Locale('th', 'TH')),
             _buildLanguageOption(context, 'Español', const Locale('es', 'ES')),
             _buildLanguageOption(context, 'ລາວ', const Locale('lo', 'LA')),
             _buildLanguageOption(context, '한국어', const Locale('ko', 'KR')),
+
+            //ຢາກໄດ້ພາສາໃດກະເພີ່ມໃສ່ ຢ່າລືມເພີ່ມ json ເດີ້ບໍ່ຊັ້ນລະ ຕຽມ error555+
+            
           ],
         ),
       ),

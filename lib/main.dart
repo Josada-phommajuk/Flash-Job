@@ -12,7 +12,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  // Initialize MobileAds
+  // ໂຄສະນາ
   await MobileAds.instance.initialize();
   
   await EasyLocalization.ensureInitialized();
@@ -27,9 +27,9 @@ void main() async {
         Locale('es', 'ES'), // Spanish
         Locale('lo', 'LA'), // Laos
         Locale('ko', 'KR'), // Korea
-        // Add more languages as needed
+        // ເພິ່ມພາສາບ່ອນນີ້ຢາກໄດ້ພາສາໃດເພິ່ມໃສ່ ຢ່າລືມໄປເພື່ອມ json ນຳ
       ],
-      path: 'assets/translations', // Path where translation files will be stored
+      path: 'assets/translations', // ອັນນີ້ import 
       fallbackLocale: const Locale('en', 'US'),
       child: MyApp(),
     ),
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      routerConfig: RouteManager.router,
+      routerConfig: RouteManager.router, //ຢ່າໄປກວນມັນຢາກ ລັນ ຫນ້າໃດໄປແປງຢູ່ route_manager.dart 
     );
   }
 }
