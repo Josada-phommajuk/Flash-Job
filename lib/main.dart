@@ -27,7 +27,7 @@ void main() async {
         Locale('es', 'ES'), // Spanish
         Locale('lo', 'LA'), // Laos
         Locale('ko', 'KR'), // Korea
-        // ເພິ່ມພາສາບ່ອນນີ້ຢາກໄດ້ພາສາໃດເພິ່ມໃສ່ ຢ່າລືມໄປເພື່ອມ json ນຳ
+        // ເພິ່ມພາສາບ່ອນນີ້ຢາກໄດ້ພາສາໃດເພິ່ມໃສ່ ຢ່າລືມໄປເພື່ມ json ນຳ
       ],
       path: 'assets/translations', // ອັນນີ້ import 
       fallbackLocale: const Locale('en', 'US'),
