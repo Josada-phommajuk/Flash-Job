@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      routerConfig: RouteManager.router, //ຢ່າໄປກວນມັນຢາກ ລັນ ຫນ້າໃດໄປແປງຢູ່ route_manager.dart 
+      routerConfig: RouteManager.router,
     );
   }
 }

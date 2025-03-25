@@ -58,7 +58,7 @@ class _ChildPageState extends State<ChildPage> {
                     title: 'serviceTitle'.tr(),
                     type: 'serviceTitle',
                     iconAsset: 'assets/icons/child.png',
-                    description: 'childServiceDescription'.tr(),
+                    description: 'childServiceDescription'.tr(),      
                     onTap: (type, title) => _childController.showConfirmationDialog(context, type, title),
                   ),
                   SizedBox(height: 16),

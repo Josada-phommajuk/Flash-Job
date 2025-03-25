@@ -20,8 +20,7 @@ class _SplashPageState extends State<SplashPage> {
     var userBox = Hive.box('userBox');
     bool isFirstTime = userBox.get('isFirstTime', defaultValue: true);
 
-    // ກວດສອບວ່າເຄີຍລັອກອິນແລ້ວບໍ່ ຖ້າເຄີຍໃຫ້ໄປຫນ້າ homepage ຖ້າຍັງກະໄປລັອກອິນກ່ອນຢ່າຂີ້ຄ້ານ
-
+    // ກວດສອບວ່າເຄີຍລັອກອິນແລ້ວບໍ່ ຖ້າເຄີຍໃຫ້ໄປຫນ້າ homepage ຖ້າຍັງກະໄປລັອກອິນກ່ອນ
     if (isFirstTime) {
       context.go('/getstart');
     } else {
