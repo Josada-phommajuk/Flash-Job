@@ -90,14 +90,13 @@ class ProfileFormFields extends StatelessWidget {
       controller: controller.phoneController,
       keyboardType: TextInputType.phone,
       inputFormatters: [
-        FilteringTextInputFormatter.digitsOnly,
-        LengthLimitingTextInputFormatter(10),
+        controller.phoneInputFormatter,
+        LengthLimitingTextInputFormatter(20), // Increased to allow formatted input
       ],
       decoration: InputDecoration(
         labelText: 'phoneNumberPageTitle'.tr(),
         hintText: 'phoneNumberHin'.tr(),
         errorText: controller.errorMessage,
-        prefixText: '+856 ',
         prefixIcon: Icon(Icons.phone, color: Colors.grey),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.grey),
@@ -113,10 +112,13 @@ class ProfileFormFields extends StatelessWidget {
         ),
       ),
       validator: (value) {
-        if (value == null || value.trim().isEmpty) {
+        // Remove non-digit characters for validation
+        String? digitsOnly = value?.replaceAll(RegExp(r'\D'), '');
+        
+        if (digitsOnly == null || digitsOnly.trim().isEmpty) {
           return 'pleaseEnterPhoneNumber'.tr();
         }
-        if (value.trim().length < 8) {
+        if (digitsOnly.trim().length < 8) {
           return 'invalidPhoneNumber'.tr();
         }
         return null;

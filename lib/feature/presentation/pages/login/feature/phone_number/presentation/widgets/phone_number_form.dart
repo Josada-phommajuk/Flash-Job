@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flash_job/feature/data/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../controllers/phone_number_controller.dart';
@@ -67,6 +68,8 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 32),
+              _buildCountrySelector(),
+              SizedBox(height: 16),
               _buildPhoneNumberField(),
               SizedBox(height: 16),
               _buildVerificationText(),
@@ -79,18 +82,48 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
     );
   }
 
+  Widget _buildCountrySelector() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      decoration: BoxDecoration(
+        color: Colors.grey.shade50,
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(color: Colors.grey.shade300),
+      ),
+      child: DropdownButton<CountryModel>(
+        value: _controller.selectedCountry,
+        isExpanded: true,
+        underline: SizedBox(),
+        items: CountryModel.countries.map((CountryModel country) {
+          return DropdownMenuItem<CountryModel>(
+            value: country,
+            child: Text(
+              '${country.name} (${country.dialCode})',
+              style: TextStyle(color: Colors.black87),
+            ),
+          );
+        }).toList(),
+        onChanged: (CountryModel? newCountry) {
+          if (newCountry != null) {
+            _controller.changeCountry(newCountry);
+          }
+        },
+      ),
+    );
+  }
+
   Widget _buildPhoneNumberField() {
     return TextFormField(
       controller: _controller.phoneController,
       keyboardType: TextInputType.phone,
       inputFormatters: [
         FilteringTextInputFormatter.digitsOnly,
-        LengthLimitingTextInputFormatter(10),
+        LengthLimitingTextInputFormatter(15),
       ],
       decoration: InputDecoration(
         hintText: 'phoneNumberHint'.tr(),
         errorText: _controller.errorMessage,
-        prefixText: '+856 ',
+        prefixText: '${_controller.selectedCountry.dialCode} ',
         prefixIcon: Icon(Icons.phone, color: Colors.grey),
         contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
         border: OutlineInputBorder(
@@ -148,7 +181,12 @@ class _PhoneNumberFormState extends State<PhoneNumberForm> {
               ),
             )
           : ElevatedButton(
-              onPressed: _controller.isButtonEnabled ? _controller.savePhoneNumber : null,
+              onPressed: _controller.isButtonEnabled 
+                  ? () {
+                      // Call save method from the controller
+                      _controller.savePhoneNumber();
+                    }
+                  : null,
               style: ElevatedButton.styleFrom(
                 backgroundColor: _controller.isButtonEnabled 
                     ? Colors.yellow.shade700 

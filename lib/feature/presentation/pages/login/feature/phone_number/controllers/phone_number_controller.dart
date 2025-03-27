@@ -1,33 +1,44 @@
+import 'package:flash_job/feature/data/models/user_model.dart';
 import 'package:flutter/material.dart';
 import '../services/phone_storage_service.dart';
 
 class PhoneNumberController {
   final TextEditingController phoneController = TextEditingController();
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   final Function() onPhoneNumberSaved;
   final PhoneStorageService phoneStorageService;
 
   bool _isButtonEnabled = false;
   bool _isLoading = false;
   String? _errorMessage;
+  CountryModel _selectedCountry;
 
   // Getters
   bool get isButtonEnabled => _isButtonEnabled;
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
+  CountryModel get selectedCountry => _selectedCountry;
 
   // Constructor
   PhoneNumberController({
     required this.onPhoneNumberSaved,
     required this.phoneStorageService,
-  }) {
+    CountryModel? initialCountry,
+  }) : _selectedCountry = initialCountry ?? CountryModel.countries[1] {
     phoneController.addListener(_validatePhoneNumber);
+  }
+
+  // Method to change selected country
+  void changeCountry(CountryModel country) {
+    _selectedCountry = country;
+    _validatePhoneNumber();
+    notifyListeners();
   }
 
   // Methods
   void _validatePhoneNumber() {
     String value = phoneController.text.trim();
-    
+
     if (value.isEmpty) {
       _isButtonEnabled = false;
       _errorMessage = 'ກະລຸນາໃສ່ເບີໂທລະສັບ';
@@ -38,7 +49,7 @@ class PhoneNumberController {
       _isButtonEnabled = true;
       _errorMessage = null;
     }
-    
+
     notifyListeners();
   }
 
@@ -49,8 +60,10 @@ class PhoneNumberController {
 
       // Simulate network delay
       Future.delayed(Duration(milliseconds: 800), () {
-        phoneStorageService.savePhoneNumber(phoneController.text.trim());
-        
+        // Save full phone number with country code
+        String fullPhoneNumber = '${_selectedCountry.dialCode}${phoneController.text.trim()}';
+        phoneStorageService.savePhoneNumber(fullPhoneNumber);
+
         _isLoading = false;
         notifyListeners();
 
@@ -60,7 +73,7 @@ class PhoneNumberController {
   }
 
   // For state management
-  final List<Function()> _listeners = [];
+  final List _listeners = [];
 
   void addListener(Function() listener) {
     _listeners.add(listener);
@@ -80,4 +93,5 @@ class PhoneNumberController {
     phoneController.dispose();
     _listeners.clear();
   }
+  
 }
